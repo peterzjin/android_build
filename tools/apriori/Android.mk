@@ -33,6 +33,10 @@ ifeq ($(TARGET_USES_2G_VM_SPLIT),true)
 LOCAL_CFLAGS += -DVM_SPLIT_2G
 endif
 
+ifeq ($(TARGET_USES_2_5G_VM_SPLIT),true)
+LOCAL_CFLAGS += -DVM_SPLIT_2_5G
+endif
+
 LOCAL_SRC_FILES := \
 	apriori.c \
 	cmdline.c \

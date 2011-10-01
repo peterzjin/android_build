@@ -28,8 +28,13 @@ static mapentry *maplist = 0;
 #define PRELINK_MIN 0x50000000
 #define PRELINK_MAX 0x6FFFFFFF
 #else
+#ifdef VM_SPLIT_2_5G
+#define PRELINK_MIN 0x70000000
+#define PRELINK_MAX 0x8FFFFFFF
+#else
 #define PRELINK_MIN 0x90000000
 #define PRELINK_MAX 0xBFFFFFFF
+#endif
 #endif
 
 void pm_init(const char *file)
